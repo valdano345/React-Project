@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+
+
+const ProductCard = () => {
+  return (
+    <div className="card">
+      <img style={{width: "100%", height: "200px", borderRadius: "10px 10px 0"}} src="" alt="" />
+
+      <div className="container">
+
+      </div>
+
+    </div>
+
+  )
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="cards">
+      Tutorial React Praktek
     </div>
   );
 }
