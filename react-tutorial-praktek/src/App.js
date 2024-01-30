@@ -1,5 +1,6 @@
 import './App.css';
-import Mobil from './Component/Mobil'
+import {Products} from './data/Product'
+import Mobil from './Component/Mobil';
 
 
 
@@ -20,14 +21,21 @@ import Mobil from './Component/Mobil'
 //   )
 // }
 
+  
+
 function App() {
-  return (
+
+  return(
     <div className="cards">
-        <Mobil gambar="https://images.unsplash.com/photo-1551830820-330a71b99659?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4MTQ2MDgwOQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" tipe="Ford"  deskripsi="Mobil ford adalah mobil yang sangat bagus" />
-        <Mobil gambar="https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4MTMyMzE1OA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" tipe="Mustang"  deskripsi="Mobil Mustang mempunyai desain yang elegan" />
-        <Mobil gambar="https://images.unsplash.com/photo-1559416523-140ddc3d238c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY5MDE0MjIxNg&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" tipe="Toyota"  deskripsi="Mobil toyota memiliki interior dan body yang kokoh" />
+    return(
+        {Products.map((product) => {
+            <Mobil key={product.id} gambar={product.imageURL} tipe={product.nama} deskripsi={product.deskripsi} />
+        })}
+    )
     </div>
-  );
+  )
+
+
 }
 
 export default App;
