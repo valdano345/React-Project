@@ -1,6 +1,5 @@
 import './App.css';
-import {Products} from './data/Product'
-import Mobil from './Component/Mobil';
+import ProductList from './Component/ProductList';
 
 
 
@@ -24,15 +23,12 @@ import Mobil from './Component/Mobil';
   
 
 function App() {
-
+  
   return(
-    <div className="cards">
-        {Products.map((product) => {
-            return (
-            <Mobil key={product.id} gambar={product.imageURL} tipe={product.nama} deskripsi={product.deskripsi} />
-            )
-        })}
-    </div>
+    <>
+      <div className="app-title">Belanja Mobil</div>
+      <ProductList />
+    </>
   )
 
 
