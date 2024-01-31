@@ -27,11 +27,11 @@ function App() {
 
   return(
     <div className="cards">
-    return(
         {Products.map((product) => {
+            return (
             <Mobil key={product.id} gambar={product.imageURL} tipe={product.nama} deskripsi={product.deskripsi} />
+            )
         })}
-    )
     </div>
   )
 
