@@ -1,37 +1,36 @@
 import './App.css';
 import ProductList from './Component/ProductList';
-
-
-
-// const ProductCard = () => {
-//   return (
-//     <div className="card">
-//       <img style={{width: "100%", height: "200px", borderRadius: "10px 10px 0 0"}} src="https://images.unsplash.com/photo-1551830820-330a71b99659?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4MTQ2MDgwOQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" alt="" />
-
-//       <div className="container">
-//           <h4>
-//             <b>Ford</b>
-//           </h4>
-//           <p>Mobil Ford adalah ....</p>
-//       </div>
-
-//     </div>
-
-//   )
-// }
-
-  
+import {useState} from 'react';
+import {Products} from './data/Product'
+import ProcutCreate from './Component/ProductCreate'
 
 function App() {
-  
+  const[products, setProducts] = useState(Products);
+  const onEditProduct = (id, data) => {
+    const updatedProduct = products.map(prod => {
+        if(prod.id === id){
+          return {...prod, ...data}
+        }
+        return prod
+    });
+    setProducts(updatedProduct);
+  };
+  const onCreateProduct = (product) => {
+    setProducts([...products, {id: Math.round(Math.random()*77777), ...product}])
+  }
+  const onDeleteProduct = (id) => {
+    const updatedProduct = products.filter((prod) => {
+      return prod.id != id
+    })
+    setProducts(updatedProduct);
+  }
   return(
     <>
-      <div className="app-title">Belanja Mobil</div>
-      <ProductList />
+      <div className="app-title">Belanja Mobil</div> 
+      <ProcutCreate onCreateProduct={onCreateProduct}/>
+      <ProductList products={products} onDeleteProduct={onDeleteProduct} onEditProduct={onEditProduct} />
     </>
   )
-
-
 }
 
 export default App;

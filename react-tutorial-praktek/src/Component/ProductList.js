@@ -1,16 +1,12 @@
 import React from 'react'
-import { Products } from '../data/Product'
 import Mobil from './Mobil'
 
-const ProductList = () => {
-    
-
-
+const ProductList = ({products, onDeleteProduct, onEditProduct}) => {
     return (
         <div className="cards">
-            {Products.map((product) => {
+            {products.map((product) => {
                 return (
-                <Mobil key={product.id} gambar={product.imageURL} tipe={product.nama} deskripsi={product.deskripsi} />
+                <Mobil key={product.id} product={product} onDeleteProduct = {onDeleteProduct} onEditProduct= {onEditProduct}/>
                 )
             })}
         </div>
