@@ -1,11 +1,12 @@
 import './App.css';
-import UseState from './Component/UseState';
 import UseReducer from './Component/UseReducer';
 import UseEffect from './Component/UseEffect';
 import UseLayoutEffect from './Component/UseLayoutEffect';
 import UseContext from './Component/UseContext';
 import UseRef from './Component/UseRef';
 import UseImperativeHandle from './Component/UseImperativeHandle';
+import UseMemo from './Component/UseMemo';
+import UseCallback from './Component/UseCallback';
 
 
 function App() {
@@ -17,7 +18,9 @@ function App() {
       {/* <UseLayoutEffect /> */}
       {/* <UseContext /> */}
       {/* <UseRef /> */}
-      <UseImperativeHandle />
+      {/* <UseImperativeHandle /> */}
+      {/* <UseMemo /> */}
+      <UseCallback />
     </div>
   );
 }
