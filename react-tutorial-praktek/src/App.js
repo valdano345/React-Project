@@ -20,7 +20,7 @@ function App() {
   }
   const onDeleteProduct = (id) => {
     const updatedProduct = products.filter((prod) => {
-      return prod.id != id
+      return prod.id !== id
     })
     setProducts(updatedProduct);
   }
