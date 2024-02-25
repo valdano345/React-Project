@@ -29,6 +29,12 @@
       "deskripsi": "Mobil Toyota Ke-2",
       "imageURL": "https://images.unsplash.com/photo-1576803636200-489c0e6b8147?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY5ODUwMjM3MA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
       "id": "db06"
+    },
+    {
+      "id": "d696",
+      "nama": "Bugati",
+      "deskripsi": "Ini adalah mobil Bugati wokwoowkow",
+      "imageURL": "https://images.unsplash.com/photo-1519440862171-af26cf8c2a85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTcwODkwMDA2NA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080"
     }
   ],
   "users": []

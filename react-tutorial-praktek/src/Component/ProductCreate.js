@@ -3,8 +3,8 @@ import {React, useState} from 'react';
 export const ProductCreate = ({onCreateProduct}) => {
     const initialState = {
         nama: '',
-        deksripsi: '',
-        imageUrl: '',
+        deskripsi: '',
+        imageURL: '',
     };
 
     const[showForm, setShowForm] = useState(false);

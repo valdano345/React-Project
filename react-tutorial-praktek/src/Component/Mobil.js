@@ -3,6 +3,7 @@ import { MdDeleteForever } from "react-icons/md";
 import { AiTwotoneEdit } from "react-icons/ai";
 import ProductEdit from "./ProductEdit";
 
+
 const Mobil = ({product, onDeleteProduct, onEditProduct}) => {
     const {id, imageURL, nama, deskripsi} = product;
     const [jumlahProduk, setJumlahProduk] = useState(0);
