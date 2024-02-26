@@ -1,20 +1,21 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Navigation = () => {
     return (
         <>
             <ul>
                 <li>
-                    <a href="/">Home</a>
+                    <Link to="/">Home</Link>
                 </li>
                 <li>
-                    <a href="/cars">Cars</a>
+                    <Link to="/cars">Cars</Link>
                 </li>
                 <li>
-                    <a href="/Contact">Contact</a>
+                    <Link to="/contact">Contact</Link>
                 </li>
                 <li>
-                    <a href="/">About</a>
+                    <Link to="/about">About</Link>
                 </li>
             </ul>
         </>
