@@ -1,10 +1,12 @@
-import {React, useState} from "react";
+import {React, useState, useContext} from "react";
 import { MdDeleteForever } from "react-icons/md";
 import { AiTwotoneEdit } from "react-icons/ai";
 import ProductEdit from "./ProductEdit";
+import ProductContext from "../context/products";
 
 
-const Mobil = ({product, onDeleteProduct, onEditProduct}) => {
+const Mobil = ({product}) => {
+    const {onDeleteProduct, onEditProduct} = useContext(ProductContext);
     const {id, imageURL, nama, deskripsi} = product;
     const [jumlahProduk, setJumlahProduk] = useState(0);
     const [showEdit, setShowEdit] = useState(false);
@@ -14,15 +16,9 @@ const Mobil = ({product, onDeleteProduct, onEditProduct}) => {
     const tambahProduct = () => {
         setJumlahProduk(jumlahProduk + 1);
     }
-    // const handleDelete = () => {
-    //     onDeleteProduct(id);
-    // }
-    // const handleShow = () => {
-    //     setShowEdit(!showEdit);
-    // }
     const handleSubmit = (id, data) => {
         setShowEdit(false);
-        onEditProduct(id, data);
+        onEditProduct(id, data);    
     }
     const cancelEdit = () => {
         setShowEdit(false);
