@@ -1,21 +1,21 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const Navigation = () => {
     return (
         <>
             <ul>
                 <li>
-                    <Link to="/">Home</Link>
+                    <NavLink to="/" reloadDocument>Home</NavLink>
                 </li>
                 <li>
-                    <Link to="/cars">Cars</Link>
+                    <NavLink to="/cars">Cars</NavLink>
                 </li>
                 <li>
-                    <Link to="/contact">Contact</Link>
+                    <NavLink className={({isActive}) => isActive ? 'active' : '' } to="/contact" replace>Contact</NavLink>
                 </li>
                 <li>
-                    <Link to="/about">About</Link>
+                    <NavLink to="/about">About</NavLink>
                 </li>
             </ul>
         </>
