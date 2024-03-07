@@ -15,45 +15,45 @@ import Cars from './Pages/Cars';
 
 function App() {
 
-  let element = useRoutes([
-    {
-      path: "/",
-      element: <Home/>
-    },
-    {
-      path: "/about",
-      element: <About/>
-    },
-    {
-      path: "contact",
-      element: <Contact/>
-    },
-    {
-      path: "/cars",
-      element: <CarLayout/>,
-      children: [
-        {
-          index: true,
-          element: <Cars/>
-        },
-        {
-          path: ":id",
-          element: <CarDetail/>
-        },
-        {
-          path: "second",
-          element: <SecondCar/>
-        }
-      ]
-    }   
-  ])
+  // let element = useRoutes([
+  //   {
+  //     path: "/",
+  //     element: <Home/>
+  //   },
+  //   {
+  //     path: "/about",
+  //     element: <About/>
+  //   },
+  //   {
+  //     path: "contact",
+  //     element: <Contact/>
+  //   },
+  //   {
+  //     path: "/cars",
+  //     element: <CarLayout/>,
+  //     children: [
+  //       {
+  //         index: true,
+  //         element: <Cars/>
+  //       },
+  //       {
+  //         path: ":id",
+  //         element: <CarDetail/>
+  //       },
+  //       {
+  //         path: "second",
+  //         element: <SecondCar/>
+  //       }
+  //     ]
+  //   }   
+  // ])
   
 
   return (
     <>
       <Navigation />
-      {element}
-      {/* <Routes>
+      {/* {element} */}
+      <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
@@ -63,7 +63,7 @@ function App() {
 
       <Routes>
         <Route path='/about' element={<div>sidebar</div>}/>
-      </Routes> */}
+      </Routes>
     </>
   );
 }
