@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import TodoItem from './TodoItem'
 
-const TodoList = ({todos, editTodo, deleteTodo}) => {
+const TodoList = ({todos, fetchTodos}) => {
+    useEffect(() => {
+        fetchTodos()
+    }, []);
+
+    
     return (
     <div>
         <ul className="todo-list">

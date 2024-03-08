@@ -8,7 +8,7 @@ const TodoHeader = ({addTodo}) => {
         addTodo(todoInput);
         setTodoInput("")
     }
-
+ 
     const handleChange = (e) => {
         setTodoInput(e.target.value);
         console.log(todoInput);
