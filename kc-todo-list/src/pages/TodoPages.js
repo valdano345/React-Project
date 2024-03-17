@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import TodoList from '../components/TodoList'
-import TodoHeader from '../components/TodoHeader'
+import TodoList from '../containers/TodoList'
+import TodoHeader from '../containers/TodoHeader'
 import { fetchTodosApi, createTodosApi, deleteTodosApi, editTodosApi } from '../api/TodosApi'
 
 

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import TodoItem from './TodoItem'
+import TodoItem from '../containers/TodoItem'
 
 const TodoList = ({todos, fetchTodos}) => {
     useEffect(() => {
@@ -12,7 +12,7 @@ const TodoList = ({todos, fetchTodos}) => {
         <ul className="todo-list">
             {todos.map(todo => {
                 return (
-                    <TodoItem key={todo.id} todo={todo} editTodo={editTodo} deleteTodo={deleteTodo} />
+                    <TodoItem key={todo.id} todo={todo}/>
                 )
             })}
         </ul>
