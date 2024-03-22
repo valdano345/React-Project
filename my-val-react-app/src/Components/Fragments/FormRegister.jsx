@@ -1,6 +1,9 @@
 import InputForm from "../Elements/Input/index"
 import Button from '../Elements/Button'
 const FormRegister = () => {
+
+    
+    
     return (
         <form action="">
             <InputForm label="Fullname" type="text" placeholder="insert your neme here..." name="fullname" /> 
