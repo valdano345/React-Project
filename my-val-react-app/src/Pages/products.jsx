@@ -1,16 +1,17 @@
 import CardProduct from '../Components/Fragments/CardProduct'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { getProducts } from '../services/product.service'
 import {useLogin} from '../hooks/useLogin.jsx'
 import TableCart from '../Components/Fragments/TableCart.jsx'
 import Navbar from '../Components/Layouts/Navbar.jsx'
+import { DarkMode } from '../context/DarkMode.jsx'
 
 
 const ProductsPage = () => {
     // const [cart, setCart] = useState([]);
     const [products, setProducts] = useState([]);
     useLogin();
-    
+    const {isDarkMode} = useContext(DarkMode);
 
     // Fetching API
     useEffect(() => {
@@ -28,7 +29,7 @@ const ProductsPage = () => {
     return (
         <>  
             <Navbar />
-            <div className="flex justify-center py-5">
+            <div className={`flex justify-center py-5 ${isDarkMode && "bg-slate-900"}`}>
                 <div className="w-4/6 flex flex-wrap">
                     {products.length > 0 && products.map((product) => {
                         return(

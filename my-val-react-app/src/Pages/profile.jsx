@@ -7,8 +7,8 @@ const ProfilePage = () => {
 
     return(
         <>
-            <Navbar />
-            <div>
+            {/* <Navbar /> */}
+            <div> 
                 <h1>Profile</h1>
                 Username : {username}
             </div>
