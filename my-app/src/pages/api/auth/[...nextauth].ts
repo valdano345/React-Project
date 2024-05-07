@@ -1,4 +1,4 @@
-import { retrieveData, signIn } from "@/lib/firebase/service";
+import { signIn } from "@/lib/firebase/service";
 import { compare } from "bcrypt";
 import { NextAuthOptions } from "next-auth";
 import NextAuth from "next-auth/next";
@@ -8,7 +8,7 @@ const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt",
   },
-  secret: process.env.NEXAUTH_SECRET,
+  secret: process.env.NEXTAUTH_SECRET,
   providers: [
     CredentialsProvider({
       type: "credentials",

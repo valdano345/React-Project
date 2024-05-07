@@ -12,7 +12,6 @@ import app from "./init";
 import bcrypt from "bcrypt";
 
 const firestore = getFirestore(app);
-
 export async function retrieveData(collectionName: string) {
   const snapshot = await getDocs(collection(firestore, collectionName));
 
