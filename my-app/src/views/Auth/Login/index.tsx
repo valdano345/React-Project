@@ -76,6 +76,12 @@ const LoginView = () => {
             {isLoading ? "Loading..." : "Login"}
           </button>
         </form>
+        <button
+          className={styles.login__form__item__google}
+          onClick={() => signIn("google", { callbackUrl, redirect: false })}
+        >
+          Login menggunkan Google
+        </button>
       </div>
       <p className={styles.login__link}>
         Belum punya akun? Daftar <Link href="/auth/register">disini</Link>

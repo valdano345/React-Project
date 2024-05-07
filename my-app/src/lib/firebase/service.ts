@@ -7,6 +7,7 @@ import {
   query,
   where,
   addDoc,
+  updateDoc,
 } from "firebase/firestore";
 import app from "./init";
 import bcrypt from "bcrypt";
@@ -77,6 +78,52 @@ export async function signUp(
       })
       .catch((error) => {
         callback({ status: false, message: error });
+      });
+  }
+}
+
+export async function signInWithGoogle(userData: any, callabck: any) {
+  const q = query(
+    collection(firestore, "users"),
+    where("email", "==", userData.email)
+  );
+  const snapshot = await getDocs(q);
+  const data: any = snapshot.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+  }));
+
+  if (data.length > 0) {
+    userData.role = data[0].role;
+    await updateDoc(doc(firestore, "usesrs", data[0].id), userData)
+      .then(() => {
+        callabck({
+          status: true,
+          message: "Login dengan gooogle berhasil",
+          data: userData,
+        });
+      })
+      .catch(() => {
+        callabck({
+          status: false,
+          message: "Login dengan google gagal",
+        });
+      });
+  } else {
+    userData.role = "member";
+    await addDoc(collection(firestore, "users"), userData)
+      .then(() => {
+        callabck({
+          status: true,
+          message: "Login dengan gooogle berhasil",
+          data: userData,
+        });
+      })
+      .catch(() => {
+        callabck({
+          status: false,
+          message: "Login dengan google gagal",
+        });
       });
   }
 }
