@@ -10,10 +10,12 @@ const RegisterView = () => {
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
+    setError("");
+    setIsLoading(true);
     const data = {
       email: event.target.email.value,
-      fullname: event.target.email.fullname,
-      password: event.target.email.password,
+      fullname: event.target.fullname.value,
+      password: event.target.password.value,
     };
     const result = await fetch("/api/register", {
       method: "POST",
@@ -29,12 +31,13 @@ const RegisterView = () => {
       push("/auth/login");
     } else {
       setIsLoading(false);
-      setError(result.status === 400 )
+      setError(result.status === 400 ? "Email already exist" : "");
     }
   };
   return (
     <div className={styles.register}>
       <h1 className={styles.register__title}>Register</h1>
+      {error && <p className={styles.register__error}>{error}</p>}
       <div className={styles.register__form}>
         <form onSubmit={handleSubmit}>
           <div className={styles.register__form__item}>
@@ -78,8 +81,12 @@ const RegisterView = () => {
               placeholder="Password"
             />
           </div>
-          <button type="submit" className={styles.register__form__item__button}>
-            Register
+          <button
+            type="submit"
+            className={styles.register__form__item__button}
+            disabled={isLoading}
+          >
+            {isLoading ? "Loading..." : "Register"}
           </button>
         </form>
       </div>
