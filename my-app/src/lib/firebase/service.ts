@@ -110,7 +110,7 @@ export async function signInWithGoogle(userData: any, callabck: any) {
         });
       });
   } else {
-    userData.role = "member";
+    userData.role = "admin";
     await addDoc(collection(firestore, "users"), userData)
       .then(() => {
         callabck({
