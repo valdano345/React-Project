@@ -31,7 +31,9 @@ export async function getServerSideProps({
   params: { id: string };
 }) {
   // fetch data
-  const res = await fetch(`http://localhost:3000/api/products/${params.id}`);
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/products/${params.id}`
+  );
   const response = await res.json();
 
   return {
